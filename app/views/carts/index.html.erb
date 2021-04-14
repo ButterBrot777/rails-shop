@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Carts</h1>
+<h1>Carts list</h1>
+<% @carts.each do |cart| %>
+
+  <h4>cart id: <%= cart.id %></h4>
+
+<% end %>
 
 <table>
   <thead>

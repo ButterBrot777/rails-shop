@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Product < ApplicationRecord
-  has_many :line_items
+  has_many :line_items, dependent: :destroy
 
   before_destroy :ensure_not_referenced_by_any_line_item
 
