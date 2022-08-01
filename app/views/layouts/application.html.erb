@@ -22,12 +22,12 @@
           <li><a href="/news">News</a></li>
           <li><a href="/contact">Contact</a></li>
         </ul>
+        <p style="color: white"><%= Time.now.strftime("%k:%M:%S") %></p>
       </nav>
 
       <main class="<%= controller.controller_name %>">
         <%= yield %>
       </main>
     </section>
-
   </body>
 </html>

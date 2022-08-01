@@ -18,7 +18,6 @@ Rails.application.configure do
   # Run rails dev:cache to toggle caching.
   if Rails.root.join('tmp/caching-dev.txt').exist?
     # enable fragment caching for portions of the page not working :(
-    # config.action_controller.enable_fragment_cache_logging = true
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
