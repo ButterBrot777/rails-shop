@@ -11,12 +11,10 @@ class LineItem < ApplicationRecord
     respond_to do |format|
       if @line_item.save
         format.html do
-          redirect_to @line_item.cart,
-                      notice: 'Line item was successfully created.'
+          redirect_to @line_item.cart, notice: "Line item was successfully created."
         end
         format.json do
-          render :show,
-                 status: :created, location: @line_item
+          render :show, status: :created, location: @line_item
         end
       else
         format.html { render :new }
