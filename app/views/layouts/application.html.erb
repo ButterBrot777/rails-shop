@@ -10,8 +10,9 @@
   </head>
 
   <body>
-    <header class="main">
+    <header class="main" style="display: flex">
       <%= image_tag('book.jpeg', class: 'header-logo') %>
+      <p>You have visited this page <%= session[:counter] %> times</p>
     </header>
 
     <section class="content">
