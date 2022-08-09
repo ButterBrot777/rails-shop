@@ -8,6 +8,11 @@ Rails.application.configure do
   # since you don't have to restart the web server when you make code changes.
   config.cache_classes = false
 
+  # Channels can have security implications, so by default Rails only allows access
+  # from the localhost when running in development mode. If you’re doing development
+  # with multiple machines, you must disable this check
+  config.action_cable.disable_request_forgery_protection = true
+
   # Do not eager load code on boot.
   config.eager_load = false
 
