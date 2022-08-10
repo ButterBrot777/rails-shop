@@ -2,7 +2,8 @@
 
 class LineItem < ApplicationRecord
   belongs_to :product
-  belongs_to :cart
+  belongs_to :cart, optional: true
+  belongs_to :order, optional: true
 
   def create
     product = Product.find(params[:product_id])
