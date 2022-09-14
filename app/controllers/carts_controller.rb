@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class CartsController < ApplicationController
+  skip_before_action :authorize, only: [:create, :update, :destroy]
+
   before_action :set_cart, only: %i[show edit update destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
