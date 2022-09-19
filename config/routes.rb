@@ -1,20 +1,25 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get 'admin' => 'admin#index'
+  get "admin" => "admin#index"
   controller :sessions do
-    get 'login' => :new
-    post 'login' => :create
-    delete 'logout' => :destroy
+    get "login" => :new
+    post "login" => :create
+    delete "logout" => :destroy
   end
 
-  get 'sessions/create'
-  get 'sessions/destroy'
+  get "sessions/create"
+  get "sessions/destroy"
 
   resources :users
-  resources :orders
-  resources :line_items
-  resources :carts
+
+  scope "(:locale)" do
+    resources :orders
+    resources :line_items
+    resources :carts
+    root "store#index"
+  end
+
   resources :products
   resources :store
 
@@ -22,6 +27,5 @@ Rails.application.routes.draw do
     get :who_bought, on: :member
   end
 
-  root 'store#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
